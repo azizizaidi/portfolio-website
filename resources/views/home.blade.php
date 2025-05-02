@@ -1,0 +1,875 @@
+@extends('layouts.main')
+
+@section('title', 'Muhammad Azizi bin Zaidi | Full-Stack Engineer')
+
+@section('content')
+   <!-- Theme toggler -->
+<div class="theme-toggle">
+    <button id="theme-toggle-btn" aria-label="Toggle dark mode">
+        <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+        <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+    </button>
+</div>
+
+<!-- Header -->
+<header id="header" class="header">
+    <div class="container">
+        <nav class="navbar">
+            <a href="#" class="logo">azizizaidi<span>.dev</span></a>
+            <div class="nav-toggle">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#expertise" class="nav-link">Expertise</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#process" class="nav-link">Process</a></li>
+            <!--    <li><a href="#testimonials" class="nav-link">Testimonials</a></li>-->
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<!-- Home / Hero Section -->
+<section id="home" class="home">
+    <div class="container">
+        <div class="hero">
+            <div class="hero-content">
+                <span class="hero-badge">Software Engineer</span>
+                <h1 class="hero-title">I help small businesses launch custom systems fast.</h1>
+                <p class="hero-subtitle">From booking forms to full dashboards, I build modern, secure, and user-friendly systems tailored to your goals.</p>
+                <div class="hero-cta">
+                    <a href="#projects" class="btn btn-primary">View My Work</a>
+                    <a href="#contact" class="btn btn-outline">Let's Talk</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="code-tabs" role="tablist">
+                    <div class="code-tab active" data-tab="frontend" role="tab" tabindex="0" aria-selected="true">Frontend</div>
+                    <div class="code-tab" data-tab="backend" role="tab" tabindex="0" aria-selected="false">Backend</div>
+                </div>
+                <div class="code-blocks">
+                    <div class="code-block active" data-content="frontend" role="tabpanel" aria-hidden="false">
+                        <pre><code class="language-javascript">
+// Modern React Component
+import { useState, useEffect } from 'react';
+
+export default function Dashboard() {
+  const [data, setData] = useState([]);
+  
+  useEffect(() => {
+    // Fetch data from API
+    fetchAnalytics().then(setData);
+  }, []);
+  
+  return (
+    <div className="dashboard">
+      <Header user={user} />
+      <Analytics data={data} />
+    </div>
+  );
+}</code></pre>
+                    </div>
+                    <div class="code-block" data-content="backend" role="tabpanel" aria-hidden="true">
+                        <pre><code class="language-php">
+namespace App\Services;
+
+class BusinessLogicService
+{
+    public function process($data)
+    {
+        // Clean implementation
+        // Secure validation
+        // Optimized queries
+        return $this->transform($data);
+    }
+}</code></pre>
+                    </div>
+                </div>
+                <div class="tech-pills">
+                    <span class="pill">React</span>
+                    <span class="pill">Laravel</span>
+                    <span class="pill">TypeScript</span>
+                    <span class="pill">MySQL</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Client Logos Section -
+<section class="clients">
+    <div class="container">
+        <div class="clients-wrapper">
+            <div class="client-intro">
+                <h3>Trusted by innovative companies</h3>
+            </div>
+            <div class="client-logos">
+                <div class="client-logo" aria-label="Client 1">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 8v8a5 5 0 0 1-5 5H8a5 5 0 0 1-5-5V8a5 5 0 0 1 5-5h8a5 5 0 0 1 5 5Z"></path><path d="M3 8h18"></path></svg>
+                    <span>TechCorp</span>
+                </div>
+                <div class="client-logo" aria-label="Client 2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m7.5 4.27 9 5.15"></path><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><path d="m3.3 7 8.7 5 8.7-5"></path><path d="M12 22V12"></path></svg>
+                    <span>InnoVenture</span>
+                </div>
+                <div class="client-logo" aria-label="Client 3">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"></circle><path d="m9 12 2 2 4-4"></path></svg>
+                    <span>NextLevel</span>
+                </div>
+                <div class="client-logo" aria-label="Client 4">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.42 4.58a5.4 5.4 0 0 0-7.65 0l-.77.78-.77-.78a5.4 5.4 0 0 0-7.65 0C1.46 6.7 1.33 10.28 4 13l8 8 8-8c2.67-2.72 2.54-6.3.42-8.42z"></path></svg>
+                    <span>Elemental</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- About Section -->
+<section id="about" class="about">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-badge">About Me</span>
+            <h2 class="section-title">Building digital solutions that make an impact</h2>
+        </div>
+        <div class="about-content">
+              <!-- Add profile picture here -->
+              <div class="about-image">
+              <img src="{{ asset('assets/profile.jpg') }}" alt="Muhammad Azizi bin Zaidi" class="profile-image">
+
+            </div>
+            <div class="about-text">
+                <p>I'm Muhammad Azizi bin Zaidi, a software engineer passionate about building complete digital experiences that bridge user needs with technical excellence. I combine a deep understanding of backend development with modern frontend expertise to deliver solutions that are both powerful and beautiful.</p>
+                <p>My approach focuses on creating high-performance applications that are secure, scalable, and user-focused. Whether it's architecting complex systems, optimizing databases, building intuitive interfaces, or implementing interactive features, I deliver code that makes a difference for your business.</p>
+                
+                <div class="tech-stack">
+                    <h3>My Tech Stack</h3>
+                    <div class="tech-categories">
+                        <div class="tech-category">
+                            <h4>Frontend</h4>
+                            <ul class="tech-list">
+                                <li>React</li>
+                                <li>TypeScript</li>
+                                <li>Next.js</li>
+                                <li>Tailwind CSS</li>
+                                <li>Zustand</li>
+                            </ul>
+                        </div>
+                        <div class="tech-category">
+                            <h4>Backend</h4>
+                            <ul class="tech-list">
+                                <li>Laravel</li>
+                                <li>Node.js</li>
+                                <li>MongoDB</li>
+                                <li>MySQL</li>
+                                <li>Redis</li>
+                            </ul>
+                        </div>
+                        <div class="tech-category">
+                            <h4>DevOps</h4>
+                            <ul class="tech-list">
+                                <li>Docker</li>
+                                <li>Git</li>
+                                <li>CI/CD</li>
+                                <li>Linux</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="about-expertise">
+                <div class="expertise-card">
+                    <div class="expertise-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9h18v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V9Z"></path><path d="M3 9V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v4"></path><path d="M15 3v4"></path><path d="M9 3v4"></path></svg>
+                    </div>
+                    <div class="expertise-content">
+                        <h4>4+ Years Experience</h4>
+                        <p>Building production-grade applications for clients across multiple industries.</p>
+                    </div>
+                </div>
+                <div class="expertise-card">
+                    <div class="expertise-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                    </div>
+                    <div class="expertise-content">
+                        <h4>Happy Clients</h4>
+                        <p>From startups to established companies across various domains.</p>
+                    </div>
+                </div>
+                <div class="expertise-card">
+                    <div class="expertise-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4"></path><path d="M12 18v4"></path><path d="M4.93 4.93l2.83 2.83"></path><path d="M16.24 16.24l2.83 2.83"></path><path d="M2 12h4"></path><path d="M18 12h4"></path><path d="M4.93 19.07l2.83-2.83"></path><path d="M16.24 7.76l2.83-2.83"></path></svg>
+                    </div>
+                    <div class="expertise-content">
+                        <h4>Clean Codebase</h4>
+                        <p>Easy to maintain, extend, and hand over — following SOLID principles and industry best practices.</p>
+                    </div>
+                </div>
+                <div class="expertise-card">
+                    <div class="expertise-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 18h8"></path><path d="M3 22h18"></path><path d="M14 22a7 7 0 1 0 0-14h-1"></path><path d="M9 14h2"></path><path d="M9 12a2 2 0 0 1 0-4h7a2 2 0 0 1 0 4h-5"></path><path d="M13 6a1 1 0 0 1 0-2h1a1 1 0 0 1 0 2"></path></svg>
+                    </div>
+                    <div class="expertise-content">
+                        <h4>Full-Stack Expertise</h4>
+                        <p>End-to-end development from database design to user interfaces.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Expertise Section -->
+<section id="expertise" class="expertise">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-badge">My Expertise</span>
+            <h2 class="section-title">End-to-end solutions tailored to your needs</h2>
+            <p class="section-subtitle">I offer comprehensive development services that cover every aspect of your digital product</p>
+        </div>
+        
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 3a3 3 0 0 0-3 3v12a3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3H6a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3V6a3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3h12a3 3 0 0 0 3-3 3 3 0 0 0-3-3z"></path></svg>
+                </div>
+                <h3>Frontend Development</h3>
+                <p>Crafting intuitive, responsive interfaces with modern frameworks like React, delivering exceptional user experiences that drive engagement.</p>
+                <ul class="service-features">
+                    <li>Interactive UI Components</li>
+                    <li>Responsive Web Design</li>
+                    <li>State Management</li>
+                    <li>Performance Optimization</li>
+                </ul>
+            </div>
+            
+            <div class="service-card">
+                <div class="service-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="8" x="2" y="2" rx="2" ry="2"></rect><rect width="20" height="8" x="2" y="14" rx="2" ry="2"></rect><line x1="6" x2="6.01" y1="6" y2="6"></line><line x1="6" x2="6.01" y1="18" y2="18"></line></svg>
+                </div>
+                <h3>Backend Development</h3>
+                <p>Building secure, scalable API services and server-side applications with Laravel and Node.js that power your business logic.</p>
+                <ul class="service-features">
+                    <li>RESTful API Development</li>
+                    <li>Database Optimization</li>
+                    <li>Authentication Systems</li>
+                    <li>Server-side Performance</li>
+                </ul>
+            </div>
+            
+            <div class="service-card">
+                <div class="service-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 22V2h16v20H4Z"></path><path d="M2 12h20"></path><path d="M12 2v20"></path></svg>
+                </div>
+                <h3>Full-Stack Applications</h3>
+                <p>Developing complete web applications from concept to deployment with seamless integration between frontend and backend systems.</p>
+                <ul class="service-features">
+                    <li>End-to-End Implementation</li>
+                    <li>Cross-platform Compatibility</li>
+                    <li>Integrated Solutions</li>
+                    <li>State Management</li>
+                </ul>
+            </div>
+            
+            <div class="service-card">
+                <div class="service-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 5v14"></path><path d="M8 5v14"></path><path d="M12 12l9-3v7l-9 3z"></path></svg>
+                </div>
+                <h3>API Development</h3>
+                <p>Creating robust, well-documented APIs that connect your services and enable seamless data flow between systems.</p>
+                <ul class="service-features">
+                    <li>RESTful Design</li>
+                    <li>Authentication & Authorization</li>
+                    <li>Versioning Strategy</li>
+                    <li>Performance Optimization</li>
+                </ul>
+            </div>
+            
+            <div class="service-card">
+                <div class="service-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"></path><path d="M5 3v4"></path><path d="M19 17v4"></path><path d="M3 5h4"></path><path d="M17 19h4"></path></svg>
+                </div>
+                <h3>UI/UX Implementation</h3>
+                <p>Transforming design mockups into fully functional interfaces with pixel-perfect accuracy and smooth interactions.</p>
+                <ul class="service-features">
+                    <li>Design to Code Conversion</li>
+                    <li>Component Architecture</li>
+                    <li>Animation & Interactions</li>
+                    <li>Accessibility Compliance</li>
+                </ul>
+            </div>
+            
+            <div class="service-card">
+                <div class="service-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="12" x="2" y="6" rx="2"></rect><path d="M12 12h.01"></path><path d="M17 12h.01"></path><path d="M7 12h.01"></path></svg>
+                </div>
+                <h3>Database Design</h3>
+                <p>Architecting efficient database structures that support your application needs with optimal performance and data integrity.</p>
+                <ul class="service-features">
+                    <li>Schema Optimization</li>
+                    <li>Migration Strategies</li>
+                    <li>Query Performance</li>
+                    <li>Data Integrity</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- View more sections in separate files: projects, process, testimonials, contact -->
+<!-- Projects Section -->
+<section id="projects" class="projects">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-badge">Featured Work</span>
+            <h2 class="section-title">Recent projects that make an impact</h2>
+            <p class="section-subtitle">A selection of my recent full-stack development work for clients across industries</p>
+        </div>
+        
+        <div class="projects-grid">
+            <!-- Project 1 -->
+            <div class="project-card">
+                <div class="project-image">
+                <img src="{{ asset('assets/skm_dashboard.png') }}" alt="sistem-kerjaya-murid" class="skm-image">
+
+                    <div class="project-overlay">
+                      <!--  <div class="project-actions">
+                            <a href="#" class="btn btn-sm">View Live</a>
+                            <a href="#" class="btn btn-sm btn-outline">Case Study</a>
+                        </div>-->
+                    </div>
+                </div>
+                <div class="project-content">
+                    <div class="project-header">
+                        <h3 class="project-title">Career Pathway System</h3>
+                        <div class="project-tech">
+                            <span>React</span>
+                            <span>Laravel</span>
+                            <span>MySQL</span>
+                        </div>
+                    </div>
+                    <div class="project-body">
+                        <p>A login platform for students and admins designed for school career assessment. Built using Laravel and TailwindCSS, 
+                            it features a secure and scalable authentication structure with a user-friendly interface.</p>
+                    </div>
+                    <div class="project-features">
+                        <span>Responsive Design</span>
+                        <span>API Integration</span>
+                        <span>Real-time Updates</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 2 -->
+            <div class="project-card">
+                <div class="project-image">
+                <img src="{{ asset('assets/sms_dashboard.png') }}" alt="sistem-minda" class="sms-image">
+                    <div class="project-overlay">
+                       <!-- <div class="project-actions">
+                            <a href="#" class="btn btn-sm">View Live</a>
+                            <a href="#" class="btn btn-sm btn-outline">Case Study</a>
+                        </div>-->
+                    </div>
+                </div>
+                <div class="project-content">
+                    <div class="project-header">
+                        <h3 class="project-title">Emotion Monitoring System</h3>
+                        <div class="project-tech">
+                            <span>Next.js</span>
+                            <span>Node.js</span>
+                            <span>MongoDB</span>
+                        </div>
+                    </div>
+                    <div class="project-body">
+                        <p>A self-assessment platform that helps participants track their emotional development based on psychology modules. 
+                            Developed with Next.js and MongoDB, the system provides dynamic charts and a personalized dashboard experience.</p>
+                    </div>
+                    <div class="project-features">
+                        <span>Node.js Backend API</span>
+                        <span>Artificial Intelligence</span>
+                        <span>Emotion Self-Test</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 3 -->
+            <div class="project-card">
+                <div class="project-image">
+                <img src="{{ asset('assets/hayyan3.png') }}" alt="sistem-minda" class="sms-image">
+                    <div class="project-overlay">
+                       <!-- <div class="project-actions">
+                            <a href="#" class="btn btn-sm">View Live</a>
+                            <a href="#" class="btn btn-sm btn-outline">Case Study</a>
+                        </div>-->
+                    </div>
+                </div>
+                <div class="project-content">
+                    <div class="project-header">
+                        <h3 class="project-title">Quran Learning Center System</h3>
+                        <div class="project-tech">
+                            <span>React</span>
+                            <span>Laravel</span>
+                            <span>PostgreSQL</span>
+                        </div>
+                    </div>
+                    <div class="project-body">
+                        <p>A management system for Quran learning centers with student-teacher accounts,
+                             class scheduling, and payment tracking. Developed using Laravel and PostgreSQL,
+                             it includes an automated invoicing system and an intuitive admin panel.</p>
+                    </div>
+                    <div class="project-features">
+                        <span>Secure Auth</span>
+                        <span>Appointment System</span>
+                        <span>Records Management</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="projects-cta">
+            <a href="#contact" class="btn btn-primary">Discuss Your Project</a>
+           <!-- <a href="#" class="text-link">
+                View More Projects
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </a>-->
+        </div>
+    </div>
+</section>
+
+<!-- Development Process Section -->
+<section id="process" class="process">
+    <div class="container">
+        
+        <div class="section-header">
+            <span class="section-badge">My Process</span>
+            <h2 class="section-title">How I turn your vision into reality system</h2>
+            <p class="section-subtitle">A transparent, collaborative approach that delivers results</p>
+        </div>
+        
+        <div class="process-timeline">
+            <div class="timeline-wrapper">
+                <!-- Step 1 -->
+                <div class="timeline-item">
+                    <div class="timeline-marker">
+                        <div class="marker-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12h10"></path><path d="M9 4v16"></path><path d="M14.5 4h3a2 2 0 0 1 2 2v3.5"></path><path d="M14.5 20h3a2 2 0 0 0 2-2v-3.5"></path></svg>
+                        </div>
+                        <span class="marker-number">01</span>
+                    </div>
+                    <div class="timeline-content">
+                        <h3>Discovery & Planning</h3>
+                        <p>Understanding your business goals, target users, and project requirements to create a comprehensive development plan.</p>
+                        <div class="timeline-details">
+                            <div class="timeline-detail">
+                                <span class="detail-label">Deliverables:</span>
+                                <span class="detail-value">Project brief, Technical specifications, Timeline</span>
+                            </div>
+                            <div class="timeline-detail">
+                                <span class="detail-label">Tools:</span>
+                                <span class="detail-value">Figma, Notion, Draw.io</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Step 2 -->
+                <div class="timeline-item">
+                    <div class="timeline-marker">
+                        <div class="marker-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9V5a1 1 0 0 1 1-1h4"></path><path d="M9 5a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1V9"></path><path d="M8 9h8"></path><path d="M15 5a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v4"></path><path d="M4 19v-6a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v6a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1Z"></path><path d="M16 13v6a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-6a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1Z"></path></svg>
+                        </div>
+                        <span class="marker-number">02</span>
+                    </div>
+                    <div class="timeline-content">
+                        <h3>Architecture & Design</h3>
+                        <p>Creating the technical architecture and UI/UX designs that will form the foundation of your application.</p>
+                        <div class="timeline-details">
+                            <div class="timeline-detail">
+                                <span class="detail-label">Deliverables:</span>
+                                <span class="detail-value">System architecture, Database schema, UI mockups</span>
+                            </div>
+                            <div class="timeline-detail">
+                                <span class="detail-label">Tools:</span>
+                                <span class="detail-value">Draw.io, Figma, MySQL Workbench</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Step 3 -->
+                <div class="timeline-item">
+                    <div class="timeline-marker">
+                        <div class="marker-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m18 16 4-4-4-4"></path><path d="m6 8-4 4 4 4"></path><path d="m14.5 4-5 16"></path></svg>
+                        </div>
+                        <span class="marker-number">03</span>
+                    </div>
+                    <div class="timeline-content">
+                        <h3>Development & Testing</h3>
+                        <p>Building your application with clean code, regular testing, and ongoing communication to ensure quality.</p>
+                        <div class="timeline-details">
+                            <div class="timeline-detail">
+                                <span class="detail-label">Deliverables:</span>
+                                <span class="detail-value">Working application code, Test reports, Weekly updates</span>
+                            </div>
+                            <div class="timeline-detail">
+                                <span class="detail-label">Tools:</span>
+                                <span class="detail-value">React, Laravel, Git, Jest, PHPUnit</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Step 4 -->
+                <div class="timeline-item">
+                    <div class="timeline-marker">
+                        <div class="marker-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-9-9c2.52 0 4.85.84 6.71 2.26"></path><path d="M9 12l3 3 8-8"></path></svg>
+                        </div>
+                        <span class="marker-number">04</span>
+                    </div>
+                    <div class="timeline-content">
+                        <h3>Deployment & Support</h3>
+                        <p>Launching your application and providing ongoing support to ensure optimal performance.</p>
+                        <div class="timeline-details">
+                            <div class="timeline-detail">
+                                <span class="detail-label">Deliverables:</span>
+                                <span class="detail-value">Deployed application, Documentation, Maintenance plan</span>
+                            </div>
+                            <div class="timeline-detail">
+                                <span class="detail-label">Tools:</span>
+                                <span class="detail-value">Docker, CI/CD, AWS, New Relic</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="process-features">
+            <div class="process-feature">
+                <div class="feature-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+                </div>
+                <h4>Secure Development</h4>
+                <p>Security built in from the start, not added as an afterthought.</p>
+            </div>
+            
+            <div class="process-feature">
+                <div class="feature-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m8 3 4 8 5-5 5 15H2L8 3z"></path></svg>
+                </div>
+                <h4>Performance Focus</h4>
+                <p>Applications optimized for speed and user experience.</p>
+            </div>
+            
+            <div class="process-feature">
+                <div class="feature-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path></svg>
+                </div>
+                <h4>Responsive Design</h4>
+                <p>Beautiful experiences on any device or screen size.</p>
+            </div>
+            
+            <div class="process-feature">
+                <div class="feature-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 18 0 9 9 0 0 0-18 0"></path><path d="M12 8v4l2 2"></path></svg>
+                </div>
+                <h4>Timely Delivery</h4>
+                <p>Projects completed on schedule and within budget.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Testimonials Section -
+<section id="testimonials" class="testimonials">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">Client Feedback</span>
+        <h2 class="section-title">What clients say about working with me</h2>
+      </div>
+  
+      <div class="testimonials-slider">
+      
+        <div class="testimonial-card active" data-index="0" style="display: block;">
+          <div class="testimonial-quote">
+            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21c3 0 7-1 7-8V5..."></path></svg>
+          </div>
+          <blockquote>
+            Muhammad transformed our business with a complete e-commerce solution that handles thousands of orders daily. His technical expertise and attention to detail are exceptional.
+          </blockquote>
+          <div class="testimonial-author">
+            <img src="/api/placeholder/64/64" alt="Client: Sarah Johnson" />
+            <div>
+              <h5>Sarah Johnson</h5>
+              <p>CEO, Fashion Frontier</p>
+            </div>
+          </div>
+        </div>
+  
+
+        <div class="testimonial-card" data-index="1" style="display: none;">
+          <div class="testimonial-quote">
+            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21c3 0 7-1 7-8V5..."></path></svg>
+          </div>
+          <blockquote>
+            Working with Muhammad on our healthcare portal was a game-changer. He built a system that's both secure and user-friendly, and our patients love it. Highly recommended!
+          </blockquote>
+          <div class="testimonial-author">
+            <img src="/api/placeholder/64/64" alt="Client: Dr. Michael Chen" />
+            <div>
+              <h5>Dr. Michael Chen</h5>
+              <p>CTO, MediCare Group</p>
+            </div>
+          </div>
+        </div>
+  
+        
+        <div class="testimonial-card" data-index="2" style="display: none;">
+          <div class="testimonial-quote">
+            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21c3 0 7-1 7-8V5..."></path></svg>
+          </div>
+          <blockquote>
+            Azizi's full-stack expertise saved us months of development time. He revamped our entire platform with modern tech while keeping everything running smoothly throughout the transition.
+          </blockquote>
+          <div class="testimonial-author">
+            <img src="/api/placeholder/64/64" alt="Client: James Wilson" />
+            <div>
+              <h5>James Wilson</h5>
+              <p>Founder, TechStartup</p>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <div class="testimonial-indicators">
+        <button class="indicator active" data-index="0" aria-label="View testimonial 1"></button>
+        <button class="indicator" data-index="1" aria-label="View testimonial 2"></button>
+        <button class="indicator" data-index="2" aria-label="View testimonial 3"></button>
+      </div>
+    </div>
+  </section>
+  
+<!-- Contact Section -->
+<section id="contact" class="contact">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-badge">Get In Touch</span>
+            <h2 class="section-title">Let's work together on your next project</h2>
+            <p class="section-subtitle">I'm currently available for freelance projects and remote opportunities</p>
+        </div>
+        
+        <div class="contact-container">
+            <div class="contact-info">
+                <div class="contact-card">
+                    <h3>Contact Information</h3>
+                    <p>Feel free to reach out to discuss your project needs, timeline, or any questions you might have.</p>
+                    
+                    <div class="contact-methods">
+                        <a href="mailto:hello@azizizaidi.dev" class="contact-method">
+                            <div class="method-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>
+                            </div>
+                            <div class="method-content">
+                                <span class="method-label">Email</span>
+                                <span class="method-value">hello@azizizaidi.dev</span>
+                            </div>
+                        </a>
+                        
+                        <a href="https://wa.me/60183879635?text=Saya%20berminat%20nak%20buat%20sistem" class="contact-method" target="_blank" rel="noopener noreferrer">
+                            <div class="method-icon">
+                              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M3 21l1.65-3.8a9 9 0 1 1 3.4 2.9L3 21"></path>
+                                <path d="M9 10a.5.5 0 0 0 1 0V9a.5.5 0 0 0-1 0v1Z"></path>
+                                <path d="M14 10a.5.5 0 0 0 1 0V9a.5.5 0 0 0-1 0v1Z"></path>
+                                <path d="M9.5 15.5c1.333.667 3.667.667 5 0"></path>
+                              </svg>
+                            </div>
+                            <div class="method-content">
+                              <span class="method-label">WhatsApp </span>
+                              <span class="method-value">+6018-3879635</span>
+                            </div>
+                          </a>
+                          
+                        
+                        <div class="contact-method">
+                            <div class="method-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                            </div>
+                            <div class="method-content">
+                                <span class="method-label">Location</span>
+                                <span class="method-value">Meru,Selangor, Malaysia</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="availability">
+                        <div class="availability-indicator">
+                            <span class="status-dot available"></span>
+                            <span>Currently Available for New Projects</span>
+                        </div>
+                        <p class="availability-note">I typically respond within 30 minutes</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="contact-form-container">
+                <form id="" class="contact-form" action="https://formspree.io/f/xanoeygp" method="POST">
+                  
+                  <!-- Anti-bot honeypot -->
+                  <input type="text" name="_gotcha" style="display:none">
+              
+                  <!-- Redirect after submission -->
+                  <input type="hidden" name="_redirect" value="https://azizizaidi.dev/thanks.html">
+              
+                  <!-- Custom subject (optional) -->
+                  <input type="hidden" name="_subject" value="New Project Inquiry from Website">
+              
+                  <div class="form-header">
+                    <h3>Send me a message</h3>
+                    <p>I'd love to hear about your project</p>
+                  </div>
+              
+                  <div class="form-row">
+                    <div class="form-group">
+                      <label for="name">Name</label>
+                      <input type="text" id="name" name="name" required>
+                    </div>
+              
+                    <div class="form-group">
+                      <label for="email">Email</label>
+                      <input type="email" id="email" name="email" required>
+                    </div>
+                  </div>
+              
+                  <div class="form-group">
+                    <label for="subject">Subject</label>
+                    <input type="text" id="subject" name="subject" required>
+                  </div>
+              
+                  <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                  </div>
+              
+                  <button type="submit" class="btn btn-primary">
+                    Send Message
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 2-7 20-4-9-9-4Z"></path><path d="M22 2 11 13"></path></svg>
+                  </button>
+              
+                </form>
+              </div>
+              
+        </div>
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section class="cta">
+    <div class="container">
+        <div class="cta-container">
+            <div class="cta-content">
+                <h2>Ready to build something amazing together?</h2>
+                <p>Let's create a digital experience that elevates your business and delights your users.</p>
+                <div class="cta-benefits">
+                    <div class="cta-benefit">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                        <span>Modern, responsive interfaces</span>
+                    </div>
+                    <div class="cta-benefit">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                        <span>Robust, secure backend systems</span>
+                    </div>
+                    <div class="cta-benefit">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                        <span>Seamless end-to-end integration</span>
+                    </div>
+                    <div class="cta-benefit">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                        <span>Solutions tailored to your business needs</span>
+                    </div>
+                </div>
+                <div class="cta-buttons">
+                    <a href="#contact" class="btn btn-primary">Start a Project</a>
+                    <a href="#projects" class="btn btn-outline">Explore My Work</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<!-- Footer -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <a href="#" class="footer-logo">azizizaidi<span>.dev</span></a>
+                <p>Creating exceptional digital experiences through thoughtful full-stack development.</p>
+             <!--   <div class="social-links">
+                    <a href="#" aria-label="GitHub">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path><path d="M9 18c-4.51 2-5-2-7-2"></path></svg>
+                    </a>
+                    <a href="#" aria-label="LinkedIn">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect width="4" height="12" x="2" y="9"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                    </a>
+                    <a href="#" aria-label="Twitter">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path></svg>
+                    </a>
+                </div>-->
+            </div>
+            <div class="footer-links-container">
+                <div class="footer-links-column">
+                    <h4>Navigation</h4>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#expertise">Expertise</a></li>
+                        <li><a href="#projects">Projects</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links-column">
+                    <h4>More</h4>
+                    <ul class="footer-links">
+                        <li><a href="#process">Process</a></li>
+                       
+                        <li><a href="#contact">Contact</a></li>
+                      <!--  <li><a href="#">Blog</a></li>-->
+                    </ul>
+                </div>
+                <div class="footer-links-column">
+                    <h4>Contact</h4>
+                    <ul class="footer-contact">
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>
+                            <a href="mailto:hello@azizizaidi.dev">hello@azizizaidi.dev</a>
+                        </li>
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                            <a href="tel:+1234567890">+6018-3879635</a>
+                        </li>
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                            <span>Meru,Selangor, Malaysia</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 azizizaidi.dev. All rights reserved.</p>
+            <div class="footer-legal">
+            <a href="{{ route('privacy') }}">Privacy Policy</a> | 
+            <a href="{{ route('terms') }}">Terms of Service</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+@endsection
